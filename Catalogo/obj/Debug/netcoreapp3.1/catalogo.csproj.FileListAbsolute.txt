@@ -1,8 +1,0 @@
-C:\Users\33325573860\PRINCIPAL\MEUS PROJETOS\dasa-challenge-v2\catalogo\bin\Debug\netcoreapp3.1\catalogo.deps.json
-C:\Users\33325573860\PRINCIPAL\MEUS PROJETOS\dasa-challenge-v2\catalogo\bin\Debug\netcoreapp3.1\catalogo.dll
-C:\Users\33325573860\PRINCIPAL\MEUS PROJETOS\dasa-challenge-v2\catalogo\bin\Debug\netcoreapp3.1\catalogo.pdb
-C:\Users\33325573860\PRINCIPAL\MEUS PROJETOS\dasa-challenge-v2\catalogo\obj\Debug\netcoreapp3.1\catalogo.csprojAssemblyReference.cache
-C:\Users\33325573860\PRINCIPAL\MEUS PROJETOS\dasa-challenge-v2\catalogo\obj\Debug\netcoreapp3.1\catalogo.AssemblyInfoInputs.cache
-C:\Users\33325573860\PRINCIPAL\MEUS PROJETOS\dasa-challenge-v2\catalogo\obj\Debug\netcoreapp3.1\catalogo.AssemblyInfo.cs
-C:\Users\33325573860\PRINCIPAL\MEUS PROJETOS\dasa-challenge-v2\catalogo\obj\Debug\netcoreapp3.1\catalogo.dll
-C:\Users\33325573860\PRINCIPAL\MEUS PROJETOS\dasa-challenge-v2\catalogo\obj\Debug\netcoreapp3.1\catalogo.pdb

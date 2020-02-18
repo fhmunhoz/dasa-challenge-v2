@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
-using Dasa.Catalogo.Domain;
 using System.Collections.Generic;
+using Dasa.Catalogo.Helpers;
+using Dasa.Catalogo.Models;
 
 namespace Dasa.Catalogo.Interfaces
 {

@@ -14,8 +14,8 @@ using System.Web;
 using Dasa.WebScrap.Interfaces;
 using Dasa.WebScrap.Domain;
 using Dasa.Data.Respository;
-using Dasa.CrossCutting.Helpers;
-using Dasa.CrossCutting.DTO;
+using Dasa.WebScrap.Helpers;
+using Dasa.WebScrap.Models;
 
 namespace Dasa.WebScrap.Services
 {

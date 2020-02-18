@@ -4,7 +4,7 @@ using Dasa.CrossCutting.DTO;
 using System.Collections.Generic;
 using Dasa.CrossCutting.Helpers;
 using Dasa.Data.Tables;
-
+using System.Linq;
 
 namespace Dasa.Data.Respository
 {
@@ -30,7 +30,7 @@ namespace Dasa.Data.Respository
 
         IEnumerable<Roupas> RetornaRoupasPorURL(string url);
         
-        IEnumerable<BuscaConsolidada> RetornaBuscaConsolidadaPorCategoria(string termoBusca);
+        IQueryable<BuscaConsolidada> RetornaBuscaConsolidadaPorCategoria(string termoBusca);
 
     }
 

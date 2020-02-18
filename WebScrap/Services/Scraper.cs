@@ -7,10 +7,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using System.IO;
 using System;
+using System.Linq;
 
 using Dasa.WebScrap.Interfaces;
 using Dasa.WebScrap.Domain;
 using Dasa.Data.Respository;
+using Dasa.WebScrap.Models;
+using Dasa.Data.Tables;
 
 namespace Dasa.WebScrap.Services
 {

@@ -1,8 +1,0 @@
-C:\Users\33325573860\PRINCIPAL\MEUS PROJETOS\dasa-challenge-v2\crosscutting\obj\Debug\netcoreapp3.1\CrossCutting.Ioc.csprojAssemblyReference.cache
-C:\Users\33325573860\PRINCIPAL\MEUS PROJETOS\dasa-challenge-v2\crosscutting\obj\Debug\netcoreapp3.1\CrossCutting.Ioc.AssemblyInfoInputs.cache
-C:\Users\33325573860\PRINCIPAL\MEUS PROJETOS\dasa-challenge-v2\crosscutting\obj\Debug\netcoreapp3.1\CrossCutting.Ioc.AssemblyInfo.cs
-C:\Users\33325573860\PRINCIPAL\MEUS PROJETOS\dasa-challenge-v2\crosscutting\bin\Debug\netcoreapp3.1\CrossCutting.Ioc.deps.json
-C:\Users\33325573860\PRINCIPAL\MEUS PROJETOS\dasa-challenge-v2\crosscutting\bin\Debug\netcoreapp3.1\CrossCutting.Ioc.dll
-C:\Users\33325573860\PRINCIPAL\MEUS PROJETOS\dasa-challenge-v2\crosscutting\bin\Debug\netcoreapp3.1\CrossCutting.Ioc.pdb
-C:\Users\33325573860\PRINCIPAL\MEUS PROJETOS\dasa-challenge-v2\crosscutting\obj\Debug\netcoreapp3.1\CrossCutting.Ioc.dll
-C:\Users\33325573860\PRINCIPAL\MEUS PROJETOS\dasa-challenge-v2\crosscutting\obj\Debug\netcoreapp3.1\CrossCutting.Ioc.pdb

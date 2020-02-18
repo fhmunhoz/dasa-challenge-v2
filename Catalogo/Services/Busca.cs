@@ -6,8 +6,8 @@ using System.Linq;
 
 using Dasa.Data.Respository;
 using Dasa.Catalogo.Interfaces;
+using Dasa.Catalogo.Helpers;
 using Dasa.Catalogo.Models;
-using Dasa.CrossCutting.Helpers;
 
 namespace Dasa.Catalogo.Services
 {

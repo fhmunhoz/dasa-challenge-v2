@@ -109,7 +109,7 @@ namespace Dasa.Data.Respository
         }
 
         
-        public IEnumerable<BuscaConsolidada> RetornaBuscaConsolidadaPorCategoria(string termoBusca)
+        public IQueryable<BuscaConsolidada> RetornaBuscaConsolidadaPorCategoria(string termoBusca)
         {
 
             return from bus in _context.BuscaConsolidada
