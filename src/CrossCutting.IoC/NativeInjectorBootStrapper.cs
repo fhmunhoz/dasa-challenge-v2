@@ -1,4 +1,4 @@
-//using MediatR;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,7 +12,7 @@ using Dasa.Catalogo.Services;
 using Dasa.WebScrap.Helpers;
 using Dasa.WebScrap.Interfaces;
 using Dasa.WebScrap.Services;
-using Dasa.WebScrap.Domain;
+using Dasa.WebScrap.Models;
 
 using System.Collections.Generic;
 
@@ -30,6 +30,7 @@ namespace Dasa.CrossCutting.IoC
             services.AddScoped<IBusca, Busca>();
 
             services.AddScoped<IScraper, Scraper>();
+            services.AddScoped<IScraperBusca, ScraperBusca>();
             services.AddScoped<IScraperFactory, ScraperFactory>();
             services.AddScoped<IScraperSiteDistritoModas, ScraperSiteDistritoModa>();
             services.AddScoped<IScraperSitePosthaus, ScraperSitePostHaus>();

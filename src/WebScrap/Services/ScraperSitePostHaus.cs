@@ -12,7 +12,6 @@ using System.Text.RegularExpressions;
 using System.Web;
 
 using Dasa.WebScrap.Interfaces;
-using Dasa.WebScrap.Domain;
 using Dasa.Data.Repository;
 using Dasa.WebScrap.Helpers;
 using Dasa.WebScrap.Models;
@@ -152,6 +151,11 @@ namespace Dasa.WebScrap.Services
                 //dentro da página de detalhes do produto, 
                 //padrão semelhante foi visto nos outros 3 sites
                 var nomeCategoria = categoria.QuerySelector(_template.SelectorCategoria).InnerHtml.Trim();
+                
+                //Categoria bolero está cadastradas errada no site posthaus, essa categoria tras em duplicidade 
+                //todos os outros itens do site
+                if(string.IsNullOrWhiteSpace(nomeCategoria) || nomeCategoria.ToLower() == "bolero")
+                    continue;                
 
                 await ExtrairDadosPorCategoria(urlGridCategoria, nomeCategoria, resultados);
                 buscaId = await _scraperBusca.PersistirScraping(buscaId, resultados);

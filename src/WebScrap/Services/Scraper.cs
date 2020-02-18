@@ -8,7 +8,7 @@ using System;
 using System.Linq;
 
 using Dasa.WebScrap.Interfaces;
-using Dasa.WebScrap.Domain;
+using Dasa.WebScrap.Models;
 
 namespace Dasa.WebScrap.Services
 {

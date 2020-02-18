@@ -1,5 +1,5 @@
 using System.Threading.Tasks;
-using Dasa.WebScrap.Domain;
+using Dasa.WebScrap.Models;
 using System.Collections.Generic;
 
 

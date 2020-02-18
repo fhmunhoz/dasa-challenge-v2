@@ -12,10 +12,9 @@ using System.Text.RegularExpressions;
 using System.Web;
 
 using Dasa.WebScrap.Interfaces;
-using Dasa.WebScrap.Domain;
+using Dasa.WebScrap.Models;
 using Dasa.Data.Repository;
 using Dasa.WebScrap.Helpers;
-using Dasa.WebScrap.Models;
 
 namespace Dasa.WebScrap.Services
 {

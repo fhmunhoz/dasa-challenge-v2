@@ -10,9 +10,8 @@ using System;
 using System.Linq;
 
 using Dasa.WebScrap.Interfaces;
-using Dasa.WebScrap.Domain;
-using Dasa.Data.Repository;
 using Dasa.WebScrap.Models;
+using Dasa.Data.Repository;
 using Dasa.Data.Tables;
 
 namespace Dasa.WebScrap.Services

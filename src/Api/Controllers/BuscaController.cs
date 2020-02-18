@@ -27,6 +27,7 @@ namespace Dasa.Api.Controllers
         [HttpGet("{termoBusca}/{paginaAtual:int}/{itensPorPagina:int}")]
         public async Task<ActionResult> Getbusca(string termoBusca, int paginaAtual, int itensPorPagina)
         {
+            
             if (string.IsNullOrWhiteSpace(termoBusca))
                 return BadRequest("Preencha algum termo de busca");
             if (itensPorPagina <= 0)
