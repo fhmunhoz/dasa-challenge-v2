@@ -17,7 +17,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\data\data.csproj" />
-    <ProjectReference Include="..\crosscutting\CrossCutting.Ioc.csproj" />
   </ItemGroup>
 
 </Project>

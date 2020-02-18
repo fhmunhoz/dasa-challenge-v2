@@ -13,7 +13,7 @@ using System.Web;
 
 using Dasa.WebScrap.Interfaces;
 using Dasa.WebScrap.Domain;
-using Dasa.Data.Respository;
+using Dasa.Data.Repository;
 using Dasa.WebScrap.Helpers;
 using Dasa.WebScrap.Models;
 
@@ -25,15 +25,15 @@ namespace Dasa.WebScrap.Services
         private IBrowsingContext _browsingContext { get; set; }
 
         private readonly ILogger _logger;
-        private readonly IScraper _scraper;
+        private readonly IScraperBusca _scraperBusca;
         private readonly IScraperHelper _helper;
 
         public ScraperSiteDistritoModa(ILogger<ScraperSitePostHaus> logger,
-                                        IScraper scraper,
+                                        IScraperBusca scraperBusca,
                                         IScraperHelper helper)
         {
             _logger = logger;
-            _scraper = scraper;
+            _scraperBusca = scraperBusca;
             _helper = helper;
         }
 
@@ -135,14 +135,14 @@ namespace Dasa.WebScrap.Services
                 //padrão semelhante foi visto nos outros 3 sites
                 //var nomeCategoria = categoria.QuerySelector(_template.SelectorCategoria).InnerHtml;
                 var nomeCategoria = categoria.GetAttribute("title");
-                
+
                 await ExtrairDadosPorCategoria(urlGridCategoria, nomeCategoria, resultados);
-                buscaId = await _scraper.PersistirScraping(buscaId, resultados);
+                buscaId = await _scraperBusca.PersistirScraping(buscaId, resultados);
                 resultados.Clear();
 
             }
 
-            await _scraper.ConsolidarScraping(buscaId);
+            await _scraperBusca.ConsolidarScraping(buscaId);
 
         }
 

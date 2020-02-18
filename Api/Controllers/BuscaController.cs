@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using buscador.Interfaces;
 
+using Dasa.Catalogo.Interfaces;
+using Dasa.WebScrap.Interfaces;
 
 namespace Dasa.Api.Controllers
 {

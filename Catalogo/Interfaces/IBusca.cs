@@ -8,7 +8,7 @@ namespace Dasa.Catalogo.Interfaces
 
     public interface IBusca
     {
-        Task<Helpers.PagingHelper<BuscaViewModel>> CompararProdutos(string termoBusca, int paginaAtual, int itensPagina);
+        Task<PagingHelper<BuscaViewModel>> CompararProdutos(string termoBusca, int paginaAtual, int itensPagina);
 
     }
 

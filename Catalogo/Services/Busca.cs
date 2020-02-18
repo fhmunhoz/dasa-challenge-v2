@@ -4,7 +4,7 @@ using System;
 using Microsoft.Extensions.Logging;
 using System.Linq;
 
-using Dasa.Data.Respository;
+using Dasa.Data.Repository;
 using Dasa.Catalogo.Interfaces;
 using Dasa.Catalogo.Helpers;
 using Dasa.Catalogo.Models;
@@ -14,10 +14,10 @@ namespace Dasa.Catalogo.Services
     public class Busca : IBusca
     {
 
-        private readonly IRespository _repository;
+        private readonly IRepository _repository;
         private readonly ILogger _logger;
 
-        public Busca(IRespository repository,
+        public Busca(IRepository repository,
                         ILogger<Busca> logger)
         {
             _repository = repository;

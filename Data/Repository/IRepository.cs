@@ -1,15 +1,13 @@
 using System;
 using System.Threading.Tasks;
-using Dasa.CrossCutting.DTO;
 using System.Collections.Generic;
-using Dasa.CrossCutting.Helpers;
 using Dasa.Data.Tables;
 using System.Linq;
 
-namespace Dasa.Data.Respository
+namespace Dasa.Data.Repository
 {
 
-    public interface IRespository : IDisposable
+    public interface IRepository : IDisposable
     {
 
         Task<int> InserirBusca(RegistroBusca busca);
@@ -29,7 +27,7 @@ namespace Dasa.Data.Respository
         Task InserirBuscaConsolidada(BuscaConsolidada busca);
 
         IEnumerable<Roupas> RetornaRoupasPorURL(string url);
-        
+
         IQueryable<BuscaConsolidada> RetornaBuscaConsolidadaPorCategoria(string termoBusca);
 
     }

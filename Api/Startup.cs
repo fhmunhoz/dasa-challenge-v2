@@ -10,6 +10,19 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+
+using Dasa.Data.Repository;
+using Dasa.Data.Context;
+
+using Dasa.Catalogo.Interfaces;
+using Dasa.Catalogo.Services;
+
+using Dasa.WebScrap.Helpers;
+using Dasa.WebScrap.Interfaces;
+using Dasa.WebScrap.Services;
+using Dasa.WebScrap.Domain;
+
 
 namespace Dasa.Api
 {
@@ -25,6 +38,23 @@ namespace Dasa.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddDbContext<ScraperDbContext>(options => options.UseSqlite(Configuration.GetConnectionString("default")));
+
+            services.AddScoped<IRepository, Repository>();
+
+            services.AddScoped<IBusca, Busca>();
+
+            services.AddScoped<IScraper, Scraper>();
+            services.AddScoped<IScraperBusca, ScraperBusca>();
+            services.AddScoped<IScraperFactory, ScraperFactory>();
+            services.AddScoped<IScraperSiteDistritoModas, ScraperSiteDistritoModa>();
+            services.AddScoped<IScraperSitePosthaus, ScraperSitePostHaus>();
+            services.AddScoped<IScraperSiteVKModas, ScraperSiteVkModas>();
+            services.AddScoped<IScraperHelper, ScraperHelper>();
+            services.Configure<List<TemplateBusca>>(Configuration.GetSection("ConfiguracoesBuscador:Sites"));
+
+
             services.AddControllers();
         }
 

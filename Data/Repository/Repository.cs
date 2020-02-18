@@ -3,21 +3,19 @@ using System.Threading.Tasks;
 using System;
 using Microsoft.Extensions.Logging;
 using System.Linq;
-
 using Dasa.Data.Context;
 using Dasa.Data.Tables;
-using Dasa.CrossCutting.DTO;
-using Dasa.CrossCutting.Helpers;
 
-namespace Dasa.Data.Respository
+
+namespace Dasa.Data.Repository
 {
-    public class Respository : IRespository, IDisposable
+    public class Repository : IRepository, IDisposable
     {
 
         private readonly ScraperDbContext _context;
 
-        public Respository(ScraperDbContext context,
-                        ILogger<Respository> logger)
+        public Repository(ScraperDbContext context,
+                        ILogger<Repository> logger)
         {
             _context = context;
         }
@@ -108,14 +106,14 @@ namespace Dasa.Data.Respository
             GC.SuppressFinalize(this);
         }
 
-        
+
         public IQueryable<BuscaConsolidada> RetornaBuscaConsolidadaPorCategoria(string termoBusca)
         {
 
             return from bus in _context.BuscaConsolidada
-                                  where bus.Categoria.ToLower().Contains(termoBusca.ToLower())
-                                  select bus;
-           
+                   where bus.Categoria.ToLower().Contains(termoBusca.ToLower())
+                   select bus;
+
         }
 
     }
