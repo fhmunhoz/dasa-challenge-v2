@@ -43,7 +43,7 @@ namespace Dasa.WebScrap.Services
                         //Gera o ID de busca, para agrupar as consultas em datas diferentes
                         RegistroBusca registro = new RegistroBusca
                         {
-                            DataHora = DateTime.Now.ToString("dd/MM/yyyy hh:mm"),
+                            DataHora = DateTime.Now,
                             NomeSiteOrigem = resultado.Origem
 
                         };

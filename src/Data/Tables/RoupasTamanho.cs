@@ -15,8 +15,7 @@ namespace Dasa.Data.Tables
         public int RoupaId { get; set; }
 
         [Required()]
-        [StringLength(25)]
-        [Column(TypeName = "text")]
+        [StringLength(25)]        
         public string Tamanho { get; set; }
 
     }

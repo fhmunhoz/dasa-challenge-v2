@@ -14,13 +14,10 @@ namespace Dasa.Api.Controllers
     [ApiController]
     public class BuscaController : ControllerBase
     {
-        private readonly IScraper _scraper;
         private readonly IBusca _busca;
 
-        public BuscaController(IScraper scraper,
-                                IBusca busca)
-        {
-            _scraper = scraper;
+        public BuscaController(IBusca busca)
+        {            
             _busca = busca;
         }
 
@@ -76,6 +73,34 @@ namespace Dasa.Api.Controllers
             }
 
         }
+
+        // [HttpGet("scrap")]
+        // public ActionResult InciarLeituraSites()
+        // {
+
+        //     try
+        //     {
+        //         var cron = "0 1 * * *"; //Uma vez ao dia
+        //         Hangfire.RecurringJob.AddOrUpdate(() =>
+        //         _scraper.ExtrairDadosSites(),
+        //         cron,
+        //         TimeZoneInfo.Local,
+        //         "scrapersites");
+
+        //         return Ok(new {
+        //             sucesso = true,
+        //             mensagem = "Serviço de scrap iniciado com sucesso"
+        //         });
+
+        //     }
+        //     catch (System.Exception ex)
+        //     {                
+        //         return BadRequest(new {
+        //             sucesso = false,
+        //             mensagem = ex.Message
+        //         });
+        //     }
+        // }
 
     }
 }

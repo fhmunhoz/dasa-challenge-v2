@@ -16,58 +16,46 @@ namespace Dasa.Data.Tables
         public int Id { get; set; }
 
         [Required()]
-        [StringLength(255)]
-        [Column(TypeName = "text")]
+        [StringLength(255)]        
         public string UrlProduto { get; set; }
 
         [Required()]
-        [StringLength(255)]
-        [Column(TypeName = "text")]
+        [StringLength(255)]        
         public string Nome { get; set; }
 
         [Required()]
-        [StringLength(255)]
-        [Column(TypeName = "text")]
+        [StringLength(255)]        
         public string Descricao { get; set; }
 
-        [Required()]
-        [Column(TypeName = "real")]
+        [Required()]        
         public decimal Preco { get; set; }
 
-        [Required()]
-        [Column(TypeName = "int")]
+        [Required()]        
         public int PrecoOrdenacao { get; set; }
 
         [Required()]
-        [StringLength(255)]
-        [Column(TypeName = "text")]
+        [StringLength(255)]        
         public string UrlImagem { get; set; }
 
         [Required()]
-        [StringLength(50)]
-        [Column(TypeName = "text")]
+        [StringLength(50)]        
         public string Categoria { get; set; }
 
         [Required()]
-        [StringLength(50)]
-        [Column(TypeName = "text")]
+        [StringLength(50)]        
         public string Origem { get; set; }
 
         [Required()]
-        [StringLength(255)]
-        [Column(TypeName = "text")]
+        [StringLength(255)]        
         public string Tamanhos { get; set; }
 
-        [Required()]
-        [Column(TypeName = "int")]
+        [Required()]        
         public bool MenorPreco { get; set; }
 
         [Required()]
-        [Column(TypeName = "int")]
         public bool MaiorPreco { get; set; }
 
         [Required()]
-        [Column(TypeName = "int")]
         public bool ProdutoNovo { get; set; }
 
     }

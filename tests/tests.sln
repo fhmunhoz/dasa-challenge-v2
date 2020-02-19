@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dasa.Api.Test", "Dasa.Api.Test\Dasa.Api.Test.csproj", "{00EC8771-C5CA-42F0-99DA-09D4E0DCEF27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dasa.Api.Test", "Dasa.Api.Test\Dasa.Api.Test.csproj", "{00EC8771-C5CA-42F0-99DA-09D4E0DCEF27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dasa.Catalogo.Test", "Dasa.Catalogo.Test\Dasa.Catalogo.Test.csproj", "{B04AFB7E-7676-419A-94BB-3624E23311BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dasa.Catalogo.Test", "Dasa.Catalogo.Test\Dasa.Catalogo.Test.csproj", "{B04AFB7E-7676-419A-94BB-3624E23311BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dasa.WebScrap.Test", "Dasa.WebScrap.Test\Dasa.WebScrap.Test.csproj", "{66C9D3C1-697A-430B-A162-A28A5E2702A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dasa.WebScrap.Test", "Dasa.WebScrap.Test\Dasa.WebScrap.Test.csproj", "{66C9D3C1-697A-430B-A162-A28A5E2702A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,9 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{00EC8771-C5CA-42F0-99DA-09D4E0DCEF27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -58,5 +55,11 @@ Global
 		{66C9D3C1-697A-430B-A162-A28A5E2702A8}.Release|x64.Build.0 = Release|Any CPU
 		{66C9D3C1-697A-430B-A162-A28A5E2702A8}.Release|x86.ActiveCfg = Release|Any CPU
 		{66C9D3C1-697A-430B-A162-A28A5E2702A8}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C637E7C-9B3C-4BE7-916A-144053441530}
 	EndGlobalSection
 EndGlobal

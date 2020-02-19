@@ -1,9 +1,10 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Collections.Generic;
+using System;
 
-namespace Dasa.Data.Tables
-{
+namespace Dasa.Data.Tables { 
+
     [Table("RegistroBusca")]
     public class RegistroBusca
     {
@@ -13,13 +14,10 @@ namespace Dasa.Data.Tables
         public int Id { get; set; }
 
         [Required()]        
-        [StringLength(50)]
-        [Column(TypeName = "text")]
-        public string DataHora { get; set; }
+        public DateTime DataHora { get; set; }
 
         [Required()]        
-        [StringLength(50)]
-        [Column(TypeName = "text")]
+        [StringLength(50)]        
         public string NomeSiteOrigem { get; set; }
 
         [ForeignKey("BuscaId")]

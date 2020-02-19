@@ -23,7 +23,8 @@ using Dasa.WebScrap.Helpers;
 using Dasa.WebScrap.Interfaces;
 using Dasa.WebScrap.Services;
 using Dasa.WebScrap.Models;
-
+using Hangfire;
+using Hangfire.PostgreSql;
 
 namespace Dasa.Api
 {
@@ -40,7 +41,12 @@ namespace Dasa.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddHangfire(config =>
+                config.UsePostgreSqlStorage(Configuration.GetConnectionString("default")));
+
             services.AddDependencyInjectionSetup(Configuration);
+
             services.AddControllers();
 
         }
@@ -62,6 +68,16 @@ namespace Dasa.Api
             app.UseAuthorization();
 
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
+            app.UseHangfireServer();
+            app.UseHangfireDashboard();
+            
+            //Cria a base de dados caso não exita quando a aplicação é iniciada
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetRequiredService<ScraperDbContext>();
+                context.Database.Migrate();
+            }
 
             app.UseEndpoints(endpoints =>
             {

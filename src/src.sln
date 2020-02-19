@@ -13,8 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "data", "data\data.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "webscrap", "webscrap\webscrap.csproj", "{4152B414-01FE-43D9-BCE9-D063E5DDF806}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api_", "Api_\Api_.csproj", "{DD6517D6-AE85-49C9-9BDE-E77E0D69B991}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,18 +83,6 @@ Global
 		{4152B414-01FE-43D9-BCE9-D063E5DDF806}.Release|x64.Build.0 = Release|Any CPU
 		{4152B414-01FE-43D9-BCE9-D063E5DDF806}.Release|x86.ActiveCfg = Release|Any CPU
 		{4152B414-01FE-43D9-BCE9-D063E5DDF806}.Release|x86.Build.0 = Release|Any CPU
-		{DD6517D6-AE85-49C9-9BDE-E77E0D69B991}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DD6517D6-AE85-49C9-9BDE-E77E0D69B991}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DD6517D6-AE85-49C9-9BDE-E77E0D69B991}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{DD6517D6-AE85-49C9-9BDE-E77E0D69B991}.Debug|x64.Build.0 = Debug|Any CPU
-		{DD6517D6-AE85-49C9-9BDE-E77E0D69B991}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{DD6517D6-AE85-49C9-9BDE-E77E0D69B991}.Debug|x86.Build.0 = Debug|Any CPU
-		{DD6517D6-AE85-49C9-9BDE-E77E0D69B991}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DD6517D6-AE85-49C9-9BDE-E77E0D69B991}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DD6517D6-AE85-49C9-9BDE-E77E0D69B991}.Release|x64.ActiveCfg = Release|Any CPU
-		{DD6517D6-AE85-49C9-9BDE-E77E0D69B991}.Release|x64.Build.0 = Release|Any CPU
-		{DD6517D6-AE85-49C9-9BDE-E77E0D69B991}.Release|x86.ActiveCfg = Release|Any CPU
-		{DD6517D6-AE85-49C9-9BDE-E77E0D69B991}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

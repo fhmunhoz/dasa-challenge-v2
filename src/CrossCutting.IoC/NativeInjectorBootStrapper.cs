@@ -23,7 +23,9 @@ namespace Dasa.CrossCutting.IoC
         public static void RegisterServices(IServiceCollection services, IConfiguration configuration)
         {
 
-            services.AddDbContext<ScraperDbContext>(options => options.UseSqlite(configuration.GetConnectionString("default")));
+            //services.AddDbContext<ScraperDbContext>(options => options.UseSqlite(configuration.GetConnectionString("default")));
+            services.AddDbContext<ScraperDbContext>(options =>
+                options.UseNpgsql(configuration.GetConnectionString("default")));
 
             services.AddScoped<IRepository, Repository>();
 
