@@ -28,7 +28,7 @@ namespace Dasa.Data.Repository
 
         IEnumerable<Roupas> RetornaRoupasPorURL(string url);
 
-        IQueryable<BuscaConsolidada> RetornaBuscaConsolidadaPorCategoria(string termoBusca);
+        IQueryable<BuscaConsolidada> RetornaBuscaConsolidada();
 
     }
 

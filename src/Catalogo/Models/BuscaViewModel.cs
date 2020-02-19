@@ -14,6 +14,8 @@ namespace Dasa.Catalogo.Models
         public string UrlImagem { get; set; }
         public string Categoria { get; set; }
         public string Tamanhos { get; set; }
+        public bool MenorPreco { get; set; }
+        public bool ProdutoNovo { get; set; }
 
     }
 

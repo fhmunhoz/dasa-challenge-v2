@@ -4,22 +4,29 @@
       <nav class="navbar navbar-light">
         <a class="navbar-brand">Compare preços...</a>
         <div class="form-inline">
-          <input
-            v-model="termoBusca"
-            class="form-control mr-sm-2 input-lg"
-            type="search"
-            placeholder="Digite aqui a categoria"
-            aria-label="Search"
-            style="width:500px"
-          />
-          <button
-            class="btn btn-outline-primary my-2 my-sm-0"
-            type="submit"
-            @click="realizarBusca()"
-            :disabled="termoBusca.length < 1"
-          >
-            Comparar preços
-          </button>
+          <div class="row">
+            <div class="col-md-7">
+              <autocomplete
+                input-class="form-control mr-sm-2 input-lg"
+                placeholder="Digite aqui a categoria"
+                resultsDisplay="item2"
+                resultsValue="item1"
+                v-model="termoBusca"
+                source="https://localhost:5001/api/busca/categorias/"
+              >
+              </autocomplete>
+            </div>
+            <div class="col-md-5">
+              <button
+                class="btn btn-outline-primary my-2 my-sm-0"
+                type="submit"
+                @click="realizarBusca()"
+                :disabled="termoBusca.length < 1"
+              >
+                Comparar preços
+              </button>
+            </div>
+          </div>
         </div>
       </nav>
     </div>
@@ -64,10 +71,34 @@
 
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">
-                    {{ item.categoria }} ({{ item.origem }})
+                    {{ item.categoria }} {{ item.origem }}
                   </li>
                   <li class="list-group-item">Tamanhos: {{ item.tamanhos }}</li>
-                  <li class="list-group-item">{{ item.preco }}</li>
+                  <li class="list-group-item ">
+                    <h4>
+                      <div
+                        v-bind:class="[
+                          item.menorPreco
+                            ? 'badge badge-pill badge-success'
+                            : ''
+                        ]"
+                        v-bind:title="[
+                          item.menorPreco
+                            ? 'Menor preço das ultimas pesquisas'
+                            : ''
+                        ]"
+                      >
+                        {{ item.preco | currency }}
+                        <div
+                          class="badge badge-pill badge-primary"
+                          title="Produto Novo!"
+                          v-if="item.produtoNovo"
+                        >
+                          <font-awesome-icon icon="exclamation-circle" />
+                        </div>
+                      </div>
+                    </h4>
+                  </li>
                 </ul>
                 <a
                   :href="item.urlProduto"
@@ -144,8 +175,12 @@
 </template>
 
 <script>
+import Autocomplete from "vuejs-auto-complete";
 export default {
   name: "Busca",
+  components: {
+    Autocomplete
+  },
   data() {
     return {
       termoBusca: "",

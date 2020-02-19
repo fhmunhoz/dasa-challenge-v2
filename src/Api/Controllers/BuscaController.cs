@@ -27,7 +27,7 @@ namespace Dasa.Api.Controllers
         [HttpGet("{termoBusca}/{paginaAtual:int}/{itensPorPagina:int}")]
         public async Task<ActionResult> Getbusca(string termoBusca, int paginaAtual, int itensPorPagina)
         {
-            
+
             if (string.IsNullOrWhiteSpace(termoBusca))
                 return BadRequest("Preencha algum termo de busca");
             if (itensPorPagina <= 0)
@@ -52,6 +52,29 @@ namespace Dasa.Api.Controllers
             {
                 return BadRequest(ex.Message + ex.StackTrace);
             }
+        }
+
+        [HttpGet("categorias/{termoBusca}")]
+        public ActionResult GetCategorias(string termoBusca)
+        {
+
+            if (string.IsNullOrWhiteSpace(termoBusca))
+                return BadRequest("Preencha algum termo de busca");
+
+            try
+            {
+
+                var listaGererica = new List<Tuple<string, string>>();
+                _busca.BuscaCategorias(termoBusca)
+                .ForEach(c => listaGererica.Add(new Tuple<string, string>(c, c)));
+
+                return Ok(listaGererica);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message + ex.StackTrace);
+            }
+
         }
 
     }

@@ -116,7 +116,7 @@ namespace Dasa.WebScrap.Services
                     {
                         produtoConsolidado = new BuscaConsolidada
                         {
-                            Categoria = item.Categoria,
+                            Categoria = item.Categoria.ToUpper(),
                             Descricao = item.Descricao,
                             MaiorPreco = false,
                             MenorPreco = false,
@@ -157,6 +157,7 @@ namespace Dasa.WebScrap.Services
                         produtoConsolidado.Tamanhos = tamanhos;
                         produtoConsolidado.Nome = item.Nome;
                         produtoConsolidado.Descricao = item.Nome;
+                        produtoConsolidado.Categoria = item.Categoria.ToUpper();
 
                     }
 

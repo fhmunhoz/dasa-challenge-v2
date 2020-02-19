@@ -107,11 +107,10 @@ namespace Dasa.Data.Repository
         }
 
 
-        public IQueryable<BuscaConsolidada> RetornaBuscaConsolidadaPorCategoria(string termoBusca)
+        public IQueryable<BuscaConsolidada> RetornaBuscaConsolidada()
         {
 
             return from bus in _context.BuscaConsolidada
-                   where bus.Categoria.ToLower().Contains(termoBusca.ToLower())
                    select bus;
 
         }

@@ -5,13 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Catalogo\catalogo.csproj" />
-    <ProjectReference Include="..\WebScrap\WebScrap.csproj" />
-    <ProjectReference Include="..\CrossCutting.IoC\CrossCutting.Ioc.csproj" />
+    <PackageReference Include="Hangfire" Version="1.7.9" />
+    <PackageReference Include="Hangfire.Storage.SQLite" Version="0.2.4" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Quartz" Version="3.0.7" />
+    <ProjectReference Include="..\Catalogo\catalogo.csproj" />
+    <ProjectReference Include="..\WebScrap\WebScrap.csproj" />
+    <ProjectReference Include="..\CrossCutting.IoC\CrossCutting.Ioc.csproj" />
   </ItemGroup>
 
 </Project>

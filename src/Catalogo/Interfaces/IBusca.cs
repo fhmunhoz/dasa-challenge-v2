@@ -10,6 +10,8 @@ namespace Dasa.Catalogo.Interfaces
     {
         Task<PagingHelper<BuscaViewModel>> CompararProdutos(string termoBusca, int paginaAtual, int itensPagina);
 
+        List<string> BuscaCategorias(string termoBusca);
+
     }
 
 }
