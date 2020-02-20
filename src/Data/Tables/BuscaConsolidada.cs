@@ -24,7 +24,7 @@ namespace Dasa.Data.Tables
         public string Nome { get; set; }
 
         [Required()]
-        [StringLength(1024)]        
+        [StringLength(5000)]        
         public string Descricao { get; set; }
 
         [Required()]        
@@ -34,7 +34,7 @@ namespace Dasa.Data.Tables
         public int PrecoOrdenacao { get; set; }
 
         [Required()]
-        [StringLength(255)]        
+        [StringLength(512)]        
         public string UrlImagem { get; set; }
 
         [Required()]
@@ -46,7 +46,7 @@ namespace Dasa.Data.Tables
         public string Origem { get; set; }
 
         [Required()]
-        [StringLength(255)]        
+        [StringLength(512)]        
         public string Tamanhos { get; set; }
 
         [Required()]        

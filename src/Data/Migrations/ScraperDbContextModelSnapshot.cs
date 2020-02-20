@@ -33,8 +33,8 @@ namespace data.Migrations
 
                     b.Property<string>("Descricao")
                         .IsRequired()
-                        .HasColumnType("character varying(1024)")
-                        .HasMaxLength(1024);
+                        .HasColumnType("character varying(5000)")
+                        .HasMaxLength(5000);
 
                     b.Property<bool>("MaiorPreco")
                         .HasColumnType("boolean");
@@ -63,13 +63,13 @@ namespace data.Migrations
 
                     b.Property<string>("Tamanhos")
                         .IsRequired()
-                        .HasColumnType("character varying(255)")
-                        .HasMaxLength(255);
+                        .HasColumnType("character varying(512)")
+                        .HasMaxLength(512);
 
                     b.Property<string>("UrlImagem")
                         .IsRequired()
-                        .HasColumnType("character varying(255)")
-                        .HasMaxLength(255);
+                        .HasColumnType("character varying(512)")
+                        .HasMaxLength(512);
 
                     b.Property<string>("UrlProduto")
                         .IsRequired()
@@ -138,26 +138,26 @@ namespace data.Migrations
 
                     b.Property<string>("Descricao")
                         .IsRequired()
-                        .HasColumnType("character varying(255)")
-                        .HasMaxLength(255);
+                        .HasColumnType("character varying(5000)")
+                        .HasMaxLength(5000);
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasColumnType("character varying(255)")
-                        .HasMaxLength(255);
+                        .HasColumnType("character varying(512)")
+                        .HasMaxLength(512);
 
                     b.Property<decimal>("Preco")
                         .HasColumnType("numeric");
 
                     b.Property<string>("UrlImagem")
                         .IsRequired()
-                        .HasColumnType("character varying(255)")
-                        .HasMaxLength(255);
+                        .HasColumnType("character varying(512)")
+                        .HasMaxLength(512);
 
                     b.Property<string>("UrlProduto")
                         .IsRequired()
-                        .HasColumnType("character varying(255)")
-                        .HasMaxLength(255);
+                        .HasColumnType("character varying(512)")
+                        .HasMaxLength(512);
 
                     b.HasKey("Id");
 

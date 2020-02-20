@@ -26,7 +26,7 @@ namespace Dasa.WebScrap.Services
         private readonly IScraperBusca _scraperBusca;
         private readonly IScraperHelper _helper;
 
-        public ScraperSiteVkModas(ILogger<ScraperSitePostHaus> logger,
+        public ScraperSiteVkModas(ILogger<ScraperSiteVkModas> logger,
                                         IScraperBusca scraperBusca,
                                         IScraperHelper helper)
         {
