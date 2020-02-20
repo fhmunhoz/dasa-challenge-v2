@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 using System.Linq;
 using Dasa.Data.Context;
 using Dasa.Data.Tables;
-
+using Microsoft.EntityFrameworkCore;
 
 namespace Dasa.Data.Repository
 {
@@ -115,5 +115,24 @@ namespace Dasa.Data.Repository
 
         }
 
+        public IQueryable<RegistroScraping> ListaRegistrosScraping()
+        {
+            return from regs in _context.RegistroScraping select regs;
+        }
+
+        public RegistroScraping EncontraRegistroScrapingPorId(string nomeSite)
+        {
+            return _context.RegistroScraping.Find(nomeSite);
+        }
+
+        public void AlteraRegistroScraping(RegistroScraping scrap)
+        {            
+            _context.Entry(scrap).State = EntityState.Modified;
+        }
+
+        public async Task InsereRegistroScrapingPorId(RegistroScraping scrap)
+        {
+            await _context.RegistroScraping.AddAsync(scrap);
+        }
     }
 }

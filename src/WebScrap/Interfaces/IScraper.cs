@@ -8,6 +8,12 @@ namespace Dasa.WebScrap.Interfaces
     public interface IScraper
     {
         Task ExtrairDadosSites();
+
+        List<RegistroScrap> RetornaRegistrosDeScraping();
+
+        Task AtivarWebScrapingSite(RegistroScrap nomeSite);
+        Task DesativarWebScrapingSite(RegistroScrap nomeSite);
+
     }
 
 }

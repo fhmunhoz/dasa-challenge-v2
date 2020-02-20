@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Dasa.Catalogo.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Dasa.Catalogo.Helpers
@@ -41,5 +42,6 @@ namespace Dasa.Catalogo.Helpers
             var items = await source.Skip((paginaAtual - 1) * itensPorPagina).Take(itensPorPagina).ToListAsync();
             return new PagingHelper<T>(items, totalItens, paginaAtual, itensPorPagina);
         }
+      
     }
 }

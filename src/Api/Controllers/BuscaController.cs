@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 using Dasa.Catalogo.Interfaces;
-using Dasa.WebScrap.Interfaces;
+
 
 namespace Dasa.Api.Controllers
 {

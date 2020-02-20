@@ -101,6 +101,23 @@ namespace data.Migrations
                     b.ToTable("RegistroBusca");
                 });
 
+            modelBuilder.Entity("Dasa.Data.Tables.RegistroScraping", b =>
+                {
+                    b.Property<string>("NomeSite")
+                        .HasColumnType("character varying(255)")
+                        .HasMaxLength(255);
+
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime?>("DataUltimoScraping")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.HasKey("NomeSite");
+
+                    b.ToTable("RegistroScraping");
+                });
+
             modelBuilder.Entity("Dasa.Data.Tables.Roupas", b =>
                 {
                     b.Property<int>("Id")

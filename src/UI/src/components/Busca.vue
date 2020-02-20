@@ -1,5 +1,6 @@
 <template>
   <div>
+    <admin></admin>
     <div class="barraBusca">
       <nav class="navbar navbar-light">
         <a class="navbar-brand">Compare preços...</a>
@@ -176,10 +177,13 @@
 
 <script>
 import Autocomplete from "vuejs-auto-complete";
+import Admin from "./Admin";
+
 export default {
   name: "Busca",
   components: {
-    Autocomplete
+    Autocomplete,
+    Admin
   },
   data() {
     return {

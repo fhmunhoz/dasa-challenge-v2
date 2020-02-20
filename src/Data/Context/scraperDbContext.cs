@@ -32,6 +32,7 @@ namespace Dasa.Data.Context
         public DbSet<RoupasTamanho> RoupasTamanho { get; set; }
         public DbSet<RegistroBusca> RegistroBusca { get; set; }
         public DbSet<BuscaConsolidada> BuscaConsolidada { get; set; }
+        public DbSet<RegistroScraping> RegistroScraping { get; set; }
 
     }
 }

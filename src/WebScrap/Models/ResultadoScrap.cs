@@ -1,7 +1,19 @@
 using System.Collections.Generic;
+using System;
 
 namespace Dasa.WebScrap.Models
-{    
+{
+
+    public class RegistroScrap
+    {
+
+        public string NomeSite { get; set; }
+        public DateTime? DataUltimoScraping { get; set; }
+        public bool Ativo { get; set; }
+
+
+    }
+
     public class ResultadoScrap
     {         
         public string Origem { get; set; }

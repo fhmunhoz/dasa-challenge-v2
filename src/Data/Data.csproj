@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200220034618_tbRegistroScrapingDataNull.cs" />
+    <Compile Remove="Migrations\20200220034618_tbRegistroScrapingDataNull.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
 
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.1" />
 

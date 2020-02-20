@@ -30,6 +30,10 @@ namespace Dasa.Data.Repository
 
         IQueryable<BuscaConsolidada> RetornaBuscaConsolidada();
 
+        RegistroScraping EncontraRegistroScrapingPorId(string nomeSite);
+        void AlteraRegistroScraping(RegistroScraping scrap);
+        Task InsereRegistroScrapingPorId(RegistroScraping scrap);
+        IQueryable<RegistroScraping> ListaRegistrosScraping();
     }
 
 }
