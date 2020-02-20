@@ -104,7 +104,7 @@ namespace Dasa.WebScrap.Services
 
         private async Task ExtrairDadosPagina(List<ResultadoScrap> resultados)
         {
-
+                        
             // Load default configuration
             var config = Configuration.Default.WithDefaultLoader();
             // Create a new browsing context

@@ -101,8 +101,8 @@
         this.$http
         .get("https://localhost:5001/api/BackGroundWorker/ativarBackgroudWorker/" + ativa + '/' + iniciarImediatamente)
         .then(res => res.json())
-        .then(scrapBackGroundWorkers => {
-          this.scrapBackGroundWorkers = scrapBackGroundWorkers;
+        .then(() => {
+          
         });
 
       }

@@ -81,6 +81,7 @@ namespace Dasa.WebScrap.Services
 
         public List<RegistroScrap> RetornaRegistrosDeScraping()
         {
+                                    
             var regs = (from reg in _repository.ListaRegistrosScraping()
                         select new RegistroScrap
                         {
@@ -101,6 +102,7 @@ namespace Dasa.WebScrap.Services
                 throw new Exception(string.Format("Web Scraping do site  {0} não encontrado", registro.NomeSite));
 
             reg.Ativo = true;
+            reg.EmProcessamento = false;
             _repository.AlteraRegistroScraping(reg);
             await _repository.SalvarDadosAsync();
           
@@ -113,6 +115,7 @@ namespace Dasa.WebScrap.Services
                 throw new Exception(string.Format("Web Scraping do site {0} não encontrado", registro.NomeSite));
          
             reg.Ativo = false;
+            reg.EmProcessamento = false;
             _repository.AlteraRegistroScraping(reg);
             await _repository.SalvarDadosAsync();
         }

@@ -96,7 +96,7 @@ namespace Dasa.WebScrap.Services
             try
             {
                 //var resultadosBusca = from b in _context.Roupas where b.BuscaId == id select b;
-                var resultadosBusca = _repository.RetornaRoupasPorBuscaId(id);
+                var resultadosBusca = _repository.RetornaRoupasPorBuscaId(id).ToList();
 
                 foreach (var item in resultadosBusca)
                 {
