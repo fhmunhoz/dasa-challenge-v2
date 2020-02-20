@@ -33,8 +33,8 @@ namespace data.Migrations
 
                     b.Property<string>("Descricao")
                         .IsRequired()
-                        .HasColumnType("character varying(255)")
-                        .HasMaxLength(255);
+                        .HasColumnType("character varying(1024)")
+                        .HasMaxLength(1024);
 
                     b.Property<bool>("MaiorPreco")
                         .HasColumnType("boolean");
@@ -44,8 +44,8 @@ namespace data.Migrations
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasColumnType("character varying(255)")
-                        .HasMaxLength(255);
+                        .HasColumnType("character varying(512)")
+                        .HasMaxLength(512);
 
                     b.Property<string>("Origem")
                         .IsRequired()
@@ -73,8 +73,8 @@ namespace data.Migrations
 
                     b.Property<string>("UrlProduto")
                         .IsRequired()
-                        .HasColumnType("character varying(255)")
-                        .HasMaxLength(255);
+                        .HasColumnType("character varying(512)")
+                        .HasMaxLength(512);
 
                     b.HasKey("Id");
 
@@ -112,6 +112,9 @@ namespace data.Migrations
 
                     b.Property<DateTime?>("DataUltimoScraping")
                         .HasColumnType("timestamp without time zone");
+
+                    b.Property<bool>("EmProcessamento")
+                        .HasColumnType("boolean");
 
                     b.HasKey("NomeSite");
 

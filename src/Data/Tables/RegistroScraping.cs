@@ -21,6 +21,9 @@ namespace Dasa.Data.Tables
         [Required()]
         public bool Ativo { get; set; }
 
+        [Required()]
+        public bool EmProcessamento { get; set; }
+
     }
 
 }

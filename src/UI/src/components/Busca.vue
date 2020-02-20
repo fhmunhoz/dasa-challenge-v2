@@ -1,6 +1,6 @@
 <template>
   <div>
-    <admin></admin>
+      
     <div class="barraBusca">
       <nav class="navbar navbar-light">
         <a class="navbar-brand">Compare preços...</a>
@@ -26,6 +26,10 @@
               >
                 Comparar preços
               </button>
+              <font-awesome-icon icon="cog" @click="exibirModalAdmin()" class="botaoPointer ml-2" />
+              <div>
+                
+              </div>              
             </div>
           </div>
         </div>
@@ -172,6 +176,11 @@
         </nav>
       </div>
     </div>
+    <footer>
+      <div v-if="modalAdmin" class="barraAdmin float-right">
+        <admin></admin>
+      </div>  
+    </footer>
   </div>
 </template>
 
@@ -187,6 +196,7 @@ export default {
   },
   data() {
     return {
+      modalAdmin: false,
       termoBusca: "",
       paginaAtual: 1,
       itensPorPagina: 3,
@@ -229,6 +239,9 @@ export default {
     irParaUltimaPagina() {
       this.paginaAtual = this.consulta.totalPaginas;
       this.realizarBusca();
+    },
+    exibirModalAdmin(){
+      this.modalAdmin = !this.modalAdmin;
     }
   }
 };
@@ -237,7 +250,16 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .barraBusca {
-  margin: 0 20px 0 20px;
+  /* margin: 0 20px 0 20px; */
   background-color: #e3f2fd;
 }
+
+.botaoPointer{
+  cursor: pointer;
+}
+
+.barraAdmin{    
+    margin-top: -95px;
+}
+
 </style>

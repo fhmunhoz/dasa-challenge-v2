@@ -18,6 +18,8 @@ namespace Dasa.WebScrap.Services
     public class Scraper : IScraper
     {
 
+        private const string BACKGROUND_WORKER_NAME = "webscraping";
+
         private readonly IOptions<List<TemplateBusca>> _templates;
         private readonly IScraperFactory _scraperFactory;
         private readonly ILogger _logger;
@@ -42,11 +44,15 @@ namespace Dasa.WebScrap.Services
 
                 var regBusca = _repository.EncontraRegistroScrapingPorId(busca.Nome);
 
-                if (regBusca == null || !regBusca.Ativo)
+                if (regBusca == null || !regBusca.Ativo || regBusca.EmProcessamento)
                 {
-                    //Se o registro de busca não foi achado ou está desativado
+                    //Se o registro de busca não foi achado ou está desativado ou já está em processamento
                     continue;
                 }
+
+                regBusca.EmProcessamento = true;
+                _repository.AlteraRegistroScraping(regBusca);
+                await _repository.SalvarDadosAsync();
 
                 try
                 {
@@ -55,11 +61,11 @@ namespace Dasa.WebScrap.Services
                     await service.ProcessaDadosPagina(busca);
 
                     regBusca.DataUltimoScraping = DateTime.Now;
+                    regBusca.EmProcessamento = false;
                     await _repository.SalvarDadosAsync();
 
-
                 }
-                catch (System.Exception ex)
+                catch (Exception ex)
                 {
 
                     var nomeSite = busca.Nome;
@@ -81,7 +87,7 @@ namespace Dasa.WebScrap.Services
                             Ativo = reg.Ativo,
                             DataUltimoScraping = reg.DataUltimoScraping,
                             NomeSite = reg.NomeSite
-                        }).ToList();
+                        }).OrderBy(o => o.NomeSite).ToList();
 
             return regs;
 
@@ -97,14 +103,7 @@ namespace Dasa.WebScrap.Services
             reg.Ativo = true;
             _repository.AlteraRegistroScraping(reg);
             await _repository.SalvarDadosAsync();
-
-            var cron = "0 1 * * *"; //Uma vez ao dia
-            RecurringJob.AddOrUpdate(() =>
-                    ExtrairDadosSites(),
-                    cron,
-                    TimeZoneInfo.Local,
-                    registro.NomeSite.ToLower());
-
+          
         }
 
         public async Task DesativarWebScrapingSite(RegistroScrap registro)
@@ -112,12 +111,31 @@ namespace Dasa.WebScrap.Services
             var reg = _repository.EncontraRegistroScrapingPorId(registro.NomeSite);
             if (reg is null)
                 throw new Exception(string.Format("Web Scraping do site {0} não encontrado", registro.NomeSite));
-
-            RecurringJob.RemoveIfExists(registro.NomeSite.ToLower());
-
+         
             reg.Ativo = false;
             _repository.AlteraRegistroScraping(reg);
             await _repository.SalvarDadosAsync();
+        }
+
+        public void AtivarBackGroundWorker(bool rodarImadiatamente) {
+
+            var cron = "0 1 * * *"; //Uma vez ao dia
+            RecurringJob.AddOrUpdate(() =>
+                    ExtrairDadosSites(),
+                    cron,
+                    TimeZoneInfo.Local,
+                    BACKGROUND_WORKER_NAME.ToLower());
+
+            if (rodarImadiatamente) {
+                BackgroundJob.Enqueue(() =>
+                    ExtrairDadosSites());
+            }
+
+        }
+
+        public void DesativarBackGroundWorker()
+        {
+            RecurringJob.RemoveIfExists(BACKGROUND_WORKER_NAME.ToLower());
         }
 
     }

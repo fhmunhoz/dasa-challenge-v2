@@ -16,15 +16,15 @@ namespace Dasa.Data.Tables
         public int Id { get; set; }
 
         [Required()]
-        [StringLength(255)]        
+        [StringLength(512)]        
         public string UrlProduto { get; set; }
 
         [Required()]
-        [StringLength(255)]        
+        [StringLength(512)]        
         public string Nome { get; set; }
 
         [Required()]
-        [StringLength(255)]        
+        [StringLength(1024)]        
         public string Descricao { get; set; }
 
         [Required()]        

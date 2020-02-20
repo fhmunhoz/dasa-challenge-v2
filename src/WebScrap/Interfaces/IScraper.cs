@@ -14,6 +14,9 @@ namespace Dasa.WebScrap.Interfaces
         Task AtivarWebScrapingSite(RegistroScrap nomeSite);
         Task DesativarWebScrapingSite(RegistroScrap nomeSite);
 
+        void AtivarBackGroundWorker(bool rodarImadiatamente);
+        void DesativarBackGroundWorker();
+        
     }
 
 }

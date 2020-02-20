@@ -36,7 +36,7 @@ namespace api.Controllers
         }
 
         [HttpPatch]
-        [Route("ativar")]
+        [Route("ativarWebScrapSite")]
         public async Task<ActionResult> AtivaWebScraping(RegistroScrap registro)
         {
 
@@ -44,7 +44,7 @@ namespace api.Controllers
             {
 
                 await _scraper.AtivarWebScrapingSite(registro);
-                return Ok();
+                return Ok(registro);
             }
             catch (Exception ex)
             {
@@ -53,7 +53,7 @@ namespace api.Controllers
         }
 
         [HttpPatch()]
-        [Route("desativar")]
+        [Route("desativarWebScrapSite")]
         public async Task<ActionResult> DesativaWebScraping(RegistroScrap registro)
         {
 
@@ -61,11 +61,38 @@ namespace api.Controllers
             {
 
                 await _scraper.DesativarWebScrapingSite(registro);
-                return Ok();
+                return Ok(registro);
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message + ex.StackTrace);
+            }
+        }
+
+        [HttpGet("ativarBackgroudWorker/{ativar}/{rodarImadiatamente}")]
+        public ActionResult AtivaDEsativaBackGroudWorker(bool ativar, bool rodarImadiatamente)
+        {
+
+            try
+            {
+
+                if (ativar)
+                    _scraper.AtivarBackGroundWorker(rodarImadiatamente);
+                else
+                    _scraper.DesativarBackGroundWorker();
+
+                return Ok(new { 
+                    sucesso = true,
+                    mensagem = "Operação realizada com sucesso"
+                });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new
+                {
+                    sucesso = false,
+                    mensagem = ex.Message
+                });
             }
         }
 

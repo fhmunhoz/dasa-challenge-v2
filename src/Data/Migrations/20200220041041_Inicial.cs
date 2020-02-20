@@ -114,9 +114,9 @@ namespace data.Migrations
                 table: "RoupasTamanho",
                 column: "RoupaId");
 
-            migrationBuilder.Sql(@"INSERT INTO public.""RegistroScraping""(""NomeSite"", ""Ativo"")VALUES ('VKModas', false);");
-            migrationBuilder.Sql(@"INSERT INTO public.""RegistroScraping""(""NomeSite"", ""Ativo"")VALUES ('Posthaus', false);");
-            migrationBuilder.Sql(@"INSERT INTO public.""RegistroScraping""(""NomeSite"", ""Ativo"")VALUES ('DistritoModas', false);");
+            migrationBuilder.Sql(@"INSERT INTO public.""RegistroScraping""(""NomeSite"", ""Ativo"") VALUES ('VKModas', true);");
+            migrationBuilder.Sql(@"INSERT INTO public.""RegistroScraping""(""NomeSite"", ""Ativo"") VALUES ('Posthaus', true);");
+            migrationBuilder.Sql(@"INSERT INTO public.""RegistroScraping""(""NomeSite"", ""Ativo"") VALUES ('DistritoModas', true);");
 
         }
 
