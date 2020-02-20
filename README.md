@@ -23,7 +23,7 @@ dotnet restore
 ## Vue setup
 
 ```
-cd src/Api
+cd src/ui
 npm i
 ```
 
