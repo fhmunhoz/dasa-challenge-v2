@@ -1,6 +1,5 @@
 <template>
   <div>
-      
     <div class="barraBusca">
       <nav class="navbar navbar-light">
         <a class="navbar-brand">Compare preços...</a>
@@ -26,10 +25,12 @@
               >
                 Comparar preços
               </button>
-              <font-awesome-icon icon="cog" @click="exibirModalAdmin()" class="botaoPointer ml-2" />
-              <div>
-                
-              </div>              
+              <font-awesome-icon
+                icon="cog"
+                @click="exibirModalAdmin()"
+                class="botaoPointer ml-2"
+              />
+              <div></div>
             </div>
           </div>
         </div>
@@ -37,6 +38,9 @@
     </div>
 
     <div class="py-5">
+      <div v-if="modalAdmin" class="barraAdmin float-right">
+        <admin></admin>
+      </div>
       <div class="container">
         <div class="row hidden-md-up">
           <div
@@ -176,11 +180,7 @@
         </nav>
       </div>
     </div>
-    <footer>
-      <div v-if="modalAdmin" class="barraAdmin float-right">
-        <admin></admin>
-      </div>  
-    </footer>
+    <footer></footer>
   </div>
 </template>
 
@@ -240,7 +240,7 @@ export default {
       this.paginaAtual = this.consulta.totalPaginas;
       this.realizarBusca();
     },
-    exibirModalAdmin(){
+    exibirModalAdmin() {
       this.modalAdmin = !this.modalAdmin;
     }
   }
@@ -254,12 +254,12 @@ export default {
   background-color: #e3f2fd;
 }
 
-.botaoPointer{
+.botaoPointer {
   cursor: pointer;
 }
 
-.barraAdmin{    
-    margin-top: -95px;
+.barraAdmin {
+  margin-top: -45px;
+  z-index: 50px;
 }
-
 </style>
